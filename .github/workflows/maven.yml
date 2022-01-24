@@ -21,18 +21,17 @@ jobs:
         ports:
           - 32574:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - name: Verify MySQL connection from host
-      run: |
-        sudo apt-get install -y mysql-client
-        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
-    - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+        run: |
+          sudo apt-get install -y mysql-client
+          mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+            java-version: '11'
+            distribution: 'temurin'
+            cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
