@@ -1,1 +1,2 @@
-# webservice-testApp
+# Тестовое задание на стажировку Java
+
