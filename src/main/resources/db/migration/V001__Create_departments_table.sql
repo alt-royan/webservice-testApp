@@ -1,0 +1,5 @@
+CREATE TABLE Department (
+    Id BIGINT NOT NULL AUTO_INCREMENT,
+    Department VARCHAR (100) NOT NULL,
+    PRIMARY KEY (Id)
+);
