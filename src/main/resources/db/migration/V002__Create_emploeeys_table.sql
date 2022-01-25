@@ -6,4 +6,4 @@ CREATE TABLE Employee (
     Department_Id BIGINT,
     FOREIGN KEY (Department_Id) REFERENCES Department(Id),
     PRIMARY KEY (Id)
-);
+)character set UTF8 collate utf8_bin;
